@@ -35,3 +35,49 @@ Endpoints:
                   "email": "
                   "password": "
               }
+
+### Logout [/auth/logout]
+
+#### [POST] Invalida o token que está sendo utilizado atualmente no header `X-XSRF-TOKEN`
+
+### User [/auth/user]
+
+#### [GET] Retorna os dados do usuário autenticado
+
+-   Response 200 (application/json)
+
+    -   Body
+
+              {
+                  "id": 1,
+                  "name": "Leandro",
+                  "email": ""
+              }
+
+### Usuário [/user]
+
+#### [POST] Cria um novo usuário
+
+-   Request (application/json)
+
+    -   Body
+
+              {
+                  "name": "",
+                  "email": "",
+                  "password": "",
+                  "password_confirmation": ""
+              }
+
+#### [PUT /{userId}] Atualiza um usuário
+
+-   Request (application/json)
+
+    -   Body
+
+              {
+                  "name": "",
+                  "email": "",
+                  "password": "",
+                  "password_confirmation": ""
+              }
