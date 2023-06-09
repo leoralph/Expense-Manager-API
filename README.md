@@ -40,19 +40,9 @@ Endpoints:
 
 #### [POST] Invalida o token que está sendo utilizado atualmente no header `X-XSRF-TOKEN`
 
-### User [/auth/user]
+### Usuário Autenticado [/auth/user]
 
 #### [GET] Retorna os dados do usuário autenticado
-
--   Response 200 (application/json)
-
-    -   Body
-
-              {
-                  "id": 1,
-                  "name": "Leandro",
-                  "email": ""
-              }
 
 ### Usuário [/user]
 
@@ -81,3 +71,43 @@ Endpoints:
                   "password": "",
                   "password_confirmation": ""
               }
+
+### Despesa [/expense]
+
+#### [GET] Retorna todas as despesas do usuário autenticado, em formato paginado
+
+- Request
+
+    - URL Query Params
+
+        - page
+        - per_page
+        - sort_by
+        - sort_direction
+        - search
+
+#### [POST] Cria uma nova despesa para o usuário autenticado
+
+- Request (application/json)
+
+    -   Body
+
+            {
+                "description": "",
+                "date": "",
+                "value": 0
+            }
+
+#### [PUT /{expenseId}] Atualiza uma despesa do usuário autenticado
+
+- Request (application/json)
+
+    -   Body
+
+            {
+                "description": "",
+                "date": "",
+                "value": 0
+            }
+
+#### [DELETE /{expenseId}] Exclui uma despesa do usuário autenticado
