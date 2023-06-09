@@ -23,7 +23,7 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         ExpenseCreated::class => [
-            // SendExpenseNotification::class,
+            SendExpenseNotification::class,
         ],
     ];
 
