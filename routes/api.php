@@ -23,5 +23,5 @@ Route::prefix('auth')->group(function () {
     Route::get('user', [AuthController::class, 'user']);
 });
 
-Route::apiResource('expense', ExpenseController::class)->middleware('auth:sanctum');
+Route::apiResource('expense', ExpenseController::class)->except('show')->middleware('auth:sanctum');
 Route::apiResource('user', UserController::class)->only(['store', 'update']);
