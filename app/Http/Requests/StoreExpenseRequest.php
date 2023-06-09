@@ -11,7 +11,7 @@ class StoreExpenseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,29 @@ class StoreExpenseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'description' => [
+                'required',
+                'string',
+                'max:191'
+            ],
+            'value' => [
+                'required',
+                'numeric',
+                'min:0',
+                'max:2000000000'
+            ],
+            'date' => [
+                'required',
+                'date_format:Y-m-d',
+                'before_or_equal:today'
+            ],
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'date.before_or_equal' => __('validation.before_or_equal_today')
         ];
     }
 }
