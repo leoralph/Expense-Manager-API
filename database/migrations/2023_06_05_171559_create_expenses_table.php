@@ -16,9 +16,10 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class)->constrained();
             $table->string('description', 191);
-            $table->decimal('value', 8, 2);
+            $table->decimal('value', 12, 2);
             $table->date('date');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
