@@ -14,3 +14,12 @@ Guia de configuração:
 Testes:
 
 - Os testes do projeto foram feitos com o framework [PestPHP](https://pestphp.com/), para realizar os testes basta utilizar o comando `php artisan test`
+
+Endpoints:
+
+- Todas as rotas utilizam por padrão o prefixo `api` após a url base do projeto, então se a url do projeto é `http://localhost:8000`, os endpoints serão utilizados na url `http://localhost:8000/api`
+
+## Cookie CSRF [/csrf-cookie]
+### [GET] Retorna um cookie chamado XSRF-TOKEN, o valor desse cookie deverá ser passado para todas as requisições que fazem uso de autenticação de alguma, o valor será passado utilizando o header `X-XSRF-TOKEN`
+
+
