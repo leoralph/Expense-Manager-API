@@ -7,9 +7,10 @@ Guia de configuração:
 3. Crie uma cópia do arquivo .env.example para somente .env
 4. Gere a chave de criptografia do projeto utilizando o comando `php artisan key:generate`
 5. Dentro do arquivo .env, inclua as informações nesessárias para se conectar ao banco de dados
-6. Inclua também o dominio utilizado pelo frontend na configuração `SANCTUM_STATEFUL_DOMAINS` (não é necessário caso esteja utilizando algum dos dominios que estão incluídos no arquivo `config/sanctum.php`)
-7. Utilize o comando `php artisan serve`, isso irá rodar o projeto na porte 8000 por padrão, mas pode ser customizado utilizando a opção `--port`
+6. Utilize o comando `php artisan migrate` para criar o esquema de tabelas no seu banco de dados
+7. Inclua também o dominio utilizado pelo frontend na configuração `SANCTUM_STATEFUL_DOMAINS` (não é necessário caso esteja utilizando algum dos dominios que estão incluídos no arquivo `config/sanctum.php`)
+8. Utilize o comando `php artisan serve`, isso irá rodar o projeto na porte 8000 por padrão, mas pode ser customizado utilizando a opção `--port`
 
 Testes:
 
-- Os testes do projeto foram feitos com o framework [PestPHP](https://pestphp.com/)
+- Os testes do projeto foram feitos com o framework [PestPHP](https://pestphp.com/), para realizar os testes basta utilizar o comando `php artisan test`
