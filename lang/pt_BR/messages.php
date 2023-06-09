@@ -15,5 +15,6 @@ return [
     'user' => [
         'created' => 'Usuário criado com sucesso.',
         'updated' => 'Usuário atualizado com sucesso.'
-    ]
+    ],
+    'unauthenticated' => 'Necessário realizar login.'
 ];
